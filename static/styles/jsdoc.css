@@ -31,7 +31,7 @@ body {
   color: #4d4e53;
   background-color: white;
   margin: 0 auto;
-  padding: 0 20px;
+  /*padding: 0 20px 0 0;*/
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 16px;
   line-height: 160%;
@@ -39,7 +39,7 @@ body {
 
 a,
 a:active {
-  color: #3399cc;
+  color: #777;
   text-decoration: none;
 }
 
@@ -98,7 +98,7 @@ h4 {
 
 h4.name {
   color: #fff;
-  background: #6699cc;
+  background: #999;
   box-shadow: 0 .25em .5em #d3d3d3;
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
@@ -175,10 +175,11 @@ nav {
   float: left;
   display: block;
   width: 250px;
-  background: #fff;
+  background: #aaa;
   overflow: auto;
   position: fixed;
   height: 100%;
+  padding-left: 20px;
 }
 
 nav h3 {
@@ -213,7 +214,7 @@ nav ul a:active {
 
 nav a:hover,
 nav a:active {
-  color: #3399cc;
+  color: #777;
 }
 
 nav > ul {
@@ -221,7 +222,8 @@ nav > ul {
 }
 
 nav > ul > li > a {
-  color: #3399cc;
+  color: #666;
+  font-weight: bold;
 }
 
 nav ul ul {
@@ -233,7 +235,8 @@ nav ul ul + ul {
 }
 
 nav ul ul a {
-  color: hsl(207, 1%, 60%);
+  /*color: hsl(207, 1%, 60%);*/
+  color: #eee;
   border-left: 1px solid hsl(207, 10%, 86%);
 }
 
@@ -251,7 +254,7 @@ nav h2 {
 nav > h2 > a {
    display: block;
    margin: 10px 0 -10px;
-   color: #3399cc !important;
+   color: #777 !important;
 }
 
 footer {
@@ -285,7 +288,7 @@ footer {
 }
 
 .type-signature {
-  color: #99ccff;
+  color: #ccc;
 }
 
 .type-signature:last-child {
@@ -467,7 +470,7 @@ footer {
 }
 
 span.param-type, .params td .param-type, .param-type dd {
-   color: #3399cc;
+   color: #777;
   font-family: Consolas, Monaco, 'Andale Mono', monospace
 }
 
