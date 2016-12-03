@@ -39,7 +39,7 @@ body {
 
 a,
 a:active {
-  color: #606;
+  color: #3399cc;
   text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #000;
+  color: #333;
   font-weight: 400;
   margin: 0;
 }
@@ -98,7 +98,7 @@ h4 {
 
 h4.name {
   color: #fff;
-  background: #6d426d;
+  background: #6699cc;
   box-shadow: 0 .25em .5em #d3d3d3;
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
@@ -213,7 +213,7 @@ nav ul a:active {
 
 nav a:hover,
 nav a:active {
-  color: #606;
+  color: #3399cc;
 }
 
 nav > ul {
@@ -221,7 +221,7 @@ nav > ul {
 }
 
 nav > ul > li > a {
-  color: #606;
+  color: #3399cc;
 }
 
 nav ul ul {
@@ -251,7 +251,7 @@ nav h2 {
 nav > h2 > a {
    display: block;
    margin: 10px 0 -10px;
-   color: #606 !important;
+   color: #3399cc !important;
 }
 
 footer {
@@ -285,7 +285,7 @@ footer {
 }
 
 .type-signature {
-  color: #CA79CA
+  color: #99ccff;
 }
 
 .type-signature:last-child {
@@ -297,7 +297,7 @@ footer {
 }
 
 .signature {
-    color: #fc83ff;
+    color: #ffff99;
 }
 
 .details {
@@ -467,7 +467,7 @@ footer {
 }
 
 span.param-type, .params td .param-type, .param-type dd {
-   color: #606;
+   color: #3399cc;
   font-family: Consolas, Monaco, 'Andale Mono', monospace
 }
 
