@@ -25,7 +25,6 @@ $ npm install --save-dev grunt-jsdoc
 ```
 下载模版
 ```
-$ cd node_modules
 $ git clone https://github.com/tadashi-chen/docdash.git
 ```
 
@@ -38,7 +37,7 @@ module.exports = function(grunt) {
                 src: ["src/*.js"], //源代码文件，在jsdoc_proj目录下创建src文件夹
                 options: {
                     destination: "doc", //文档生成所在目录
-                    template : "node_modules/docdash", //指定模版为docdash
+                    template : "docdash", //指定模版为docdash
                     configure: "conf.json" //在配置项里开启markdown插件
                 }
             }
