@@ -2,6 +2,15 @@
 JSDoc 3的模版，保留原有的结构，根据自己的喜好更改布局以及颜色
 
 ## 环境配置
+项目最终的目录结构预览
+```
+jsdoc_proj
+    |--docdash
+    |--node_modules
+    |--Gruntfile.js
+    |--conf.json
+    |--package.json
+```
 安装grunt命令行工具
 ```
 $ npm install -g grunt-cli
@@ -11,7 +20,7 @@ $ npm install -g grunt-cli
 $ mkdir jsdoc_proj
 $ cd jsdoc_proj
 ```
-创建package.json文件，需要npm安装几个module在项目里（该过程全部回车跳过即可）
+创建package.json文件（需要npm安装几个module在项目里，该过程全部回车跳过即可）
 ```
 $ npm init 
 ```
@@ -27,8 +36,7 @@ $ npm install --save-dev grunt-jsdoc
 ```
 $ git clone https://github.com/tadashi-chen/docdash.git
 ```
-
-`jsdoc_proj`目录下创建`Gruntfile.js`文件，内容如下
+创建`Gruntfile.js`文件，内容如下
 ```javascript
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -49,8 +57,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["jsdoc"]);
 }
 ```
-
-`jsdoc_proj`目录下创建配置文件`conf.json`，内容如下
+创建配置文件`conf.json`，内容如下
 ```json
 {
     "tags": {
