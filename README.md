@@ -29,7 +29,7 @@ $ cd node_modules
 $ git clone https://github.com/tadashi-chen/docdash.git
 ```
 
-回到`jsdoc_proj`目录，创建`Gruntfile.js`文件，内容如下
+`jsdoc_proj`目录下创建`Gruntfile.js`文件，内容如下
 ```javascript
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 }
 ```
 
-`jsdoc_proj目录下`创建配置文件`conf.json`，内容如下
+`jsdoc_proj`目录下创建配置文件`conf.json`，内容如下
 ```json
 {
     "tags": {
