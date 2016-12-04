@@ -1,68 +1,68 @@
 # Docdash
-[![npm package](https://img.shields.io/npm/v/docdash.svg)](https://www.npmjs.com/package/docdash) [![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)
+JSDoc 3的模版，保留原有的结构，根据自己的喜好更改布局以及颜色
 
-A clean, responsive documentation template theme for JSDoc 3.
-
-![docdash-screenshot](https://cloud.githubusercontent.com/assets/447956/13398144/4dde7f36-defd-11e5-8909-1a9013302cb9.png)
-
-![docdash-screenshot-2](https://cloud.githubusercontent.com/assets/447956/13401057/e30effd8-df0a-11e5-9f51-66257ac38e94.jpg)
-
-## Example
-See http://clenemt.github.io/docdash/ for a sample demo. :rocket:
-
-## Install
-
-```bash
-$ npm install docdash
+## 环境配置
+安装grunt命令行工具
+```
+$ npm install -g grunt-cli
+```
+新建一个jsdoc项目
+```
+$ mkdir jsdoc_proj
+$ cd jsdoc_proj
+```
+创建package.json文件，需要npm安装几个module在项目里（该过程全部回车跳过即可）
+```
+$ npm init 
+```
+安装grunt（上面安装`grunt-cli`只是命令行工具，不具备grunt的环境）
+```
+$ npm install --save-dev grunt
+```
+安装grunt的jsdoc插件
+```
+$ npm install --save-dev grunt-jsdoc
+```
+下载模版
+```
+$ cd node_modules
+$ git clone https://github.com/tadashi-chen/docdash.git
 ```
 
-## Usage
-Clone repository to your designated `jsdoc` template directory, then:
+回到`jsdoc_proj`目录，创建`Gruntfile.js`文件，内容如下
+```javascript
+module.exports = function(grunt) {
+    grunt.initConfig({
+        jsdoc: {
+            dist: {
+                src: ["src/*.js"], //源代码文件，在jsdoc_proj目录下创建src文件夹
+                options: {
+                    destination: "doc", //文档生成所在目录
+                    template : "node_modules/docdash", //指定模版为docdash
+                    configure: "conf.json" //在配置项里开启markdown插件
+                }
+            }
+        }
+    });
 
-```bash
-$ jsdoc entry-file.js -t path/to/docdash
-```
+    grunt.loadNpmTasks("grunt-jsdoc");
 
-## Usage (npm)
-In your projects `package.json` file add a new script:
-
-```json
-"script": {
-  "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    grunt.registerTask("default", ["jsdoc"]);
 }
 ```
 
-In your `jsdoc.json` file, add a template option.
-
-```json
-"opts": {
-  "template": "node_modules/docdash"
-}
-```
-
-## Sample `jsdoc.json`
-See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sample below.
-
+`jsdoc_proj目录下`创建配置文件`conf.json`，内容如下
 ```json
 {
     "tags": {
-        "allowUnknownTags": false
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
     },
     "source": {
-        "include": "../js",
-        "includePattern": ".js$",
-        "excludePattern": "(node_modules/|docs)"
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
     },
-    "plugins": [
-        "plugins/markdown"
-    ],
-    "opts": {
-        "template": "assets/template/docdash/",
-        "encoding": "utf8",
-        "destination": "docs/",
-        "recurse": true,
-        "verbose": true
-    },
+    "plugins": ["plugins/markdown"],
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": false
@@ -70,22 +70,9 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
 }
 ```
 
-## Options
-Docdash supports the following options:
-
+##用法
+将js源代码文件放入`jsdoc_proj/src`文件夹
 ```
-{
-    "docdash": {
-        "static": [false|true],  // Display the static members inside the navbar
-        "sort": [false|true]     // Sort the methods in the navbar
-    }
-}
+$ grunt jsdoc
 ```
-
-Place them anywhere inside your `jsdoc.json` file.
-
-## Thanks
-Thanks to [lodash](https://lodash.com) and [minami](https://github.com/nijikokun/minami).
-
-## License
-Licensed under the Apache License, version 2.0. (see [Apache-2.0](LICENSE.md)).
+如果js源代码没有语法错误，则命令行最后一行输出`Done.`表示执行成功，这时使用浏览器打开`jsdoc_proj/doc/index.html`即可看到生成的文档。
