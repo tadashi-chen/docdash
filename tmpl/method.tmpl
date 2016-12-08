@@ -52,6 +52,20 @@ var self = this;
     <?js= this.partial('params.tmpl', params) ?>
 <?js } ?>
 
+<?js if (data.args && data.args.length) { ?>
+    <table class="params">
+        <tbody>
+            <?js data.args.forEach(function(arg) { ?>
+                <tr>
+                    <td class="name"><code><?js= arg.name || "" ?></code></td>
+                    <td class="type"><?js= arg.type.names[0] || "" ?></td>
+                    <td class="description last"><?js= arg.description || "" ?></td>
+                </tr>
+            <?js }) ?>
+        </tbody>
+    </table>
+<?js } ?>
+
 <?js if (data.kind !== 'module' && data.requires && data.requires.length) { ?>
 <h5>Requires:</h5>
 <ul><?js data.requires.forEach(function(r) { ?>

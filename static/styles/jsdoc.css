@@ -222,8 +222,7 @@ nav > ul {
 }
 
 nav > ul > li > a {
-  color: #666;
-  font-weight: bold;
+  color: #ffff99;
 }
 
 nav ul ul {
@@ -235,8 +234,7 @@ nav ul ul + ul {
 }
 
 nav ul ul a {
-  /*color: hsl(207, 1%, 60%);*/
-  color: #eee;
+  color: #fff;
   border-left: 1px solid hsl(207, 10%, 86%);
 }
 
@@ -480,6 +478,14 @@ span.param-type, .params td .param-type, .param-type dd {
 
 .param-type {
   margin: 14px 0;
+}
+
+.params .name {
+  width: 150px;
+}
+
+.params .type {
+  width: 100px;
 }
 
 .disabled {
