@@ -49,21 +49,12 @@ var self = this;
 
 <?js if (data.params && params.length) { ?>
     <h5>Parameters:</h5>
-    <?js= this.partial('params.tmpl', params) ?>
-<?js } ?>
-
-<?js if (data.args && data.args.length) { ?>
-    <table class="params">
-        <tbody>
-            <?js data.args.forEach(function(arg) { ?>
-                <tr>
-                    <td class="name"><code><?js= arg.name || "" ?></code></td>
-                    <td class="type"><?js= arg.type.names[0] || "" ?></td>
-                    <td class="description last"><?js= arg.description || "" ?></td>
-                </tr>
-            <?js }) ?>
-        </tbody>
-    </table>
+    <?js for (var ij=params.length-1; ij >= 0 ; ij--) { ?>
+        <?js if (params[ij].name == "jsonArg") { ?>
+            <?js params.splice(ij, 1); break; ?>
+        <?js } ?> 
+    <?js } ?>
+    <?js= this.partial('params.tmpl', [params, data.json]) ?>
 <?js } ?>
 
 <?js if (data.kind !== 'module' && data.requires && data.requires.length) { ?>
