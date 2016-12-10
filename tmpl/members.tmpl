@@ -2,7 +2,7 @@
 var data = obj;
 var self = this;
 ?>
-<h4 class="name" id="<?js= id ?>"><?js= data.attribs + name + (data.signature ? data.signature : '') ?></h4>
+<h4 class="name" id="<?js= id ?>"><?js= name ?></h4>
 
 <?js if (data.summary) { ?>
 <p class="summary"><?js= summary ?></p>
@@ -15,6 +15,19 @@ var self = this;
     <?js= data.description ?>
 </div>
 <?js } ?>
+
+<?js 
+    var attr_access = "public";
+    if (data.attribs) {
+        if (data.attribs.indexOf('private') > -1) {
+            attr_access = "private";
+        } else if (data.attribs.indexOf('protected') > -1) {
+            attr_access = "protected";
+        }
+    }
+?>
+
+<h5>权限：<span><?js= attr_access ?></span></h5>
 
 <?js if (data.type && data.type.names) {?>
     <h5>类型：</h5>

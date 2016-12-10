@@ -98,7 +98,7 @@ h4 {
 }
 
 h4.name {
-  color: #000;
+  color: #3b3c40;
   background: #dde4e9;
   /*box-shadow: 0 .25em .5em #d3d3d3;*/
   /*border-top: 1px solid #d3d3d3;*/
@@ -187,13 +187,12 @@ nav {
 }
 
 nav h3 {
-  margin-top: 12px;
-  font-size: 12px;
+  font-size: 14px;
   /*text-transform: uppercase;*/
   /*letter-spacing: 1px;*/
   font-weight: 700;
   line-height: 24px;
-  margin: 15px 0 10px;
+  margin: 15px 0 2px;
   padding: 0;
   color: #3b3c40;
   margin-left: 20px;
@@ -209,22 +208,25 @@ nav ul {
   margin-left: 20px;
 }
 
-nav ul a,
-nav ul a:active {
+nav ul a {
   font-family: 'Montserrat', sans-serif;
   line-height: 18px;
   padding: 0;
   display: block;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 nav a:hover,
 nav a:active {
-  color: #777;
+  text-decoration: underline;
 }
 
 nav > ul {
-  padding: 0 10px;
+  padding: 2px 10px 0;
+}
+
+nav > ul > li {
+  margin-bottom: 2px;  
 }
 
 nav > ul > li > a {
@@ -236,16 +238,16 @@ nav > ul > li > a {
 nav > ul > li > span {
   display: block;
   float: left;
-  background-image: url("../img/triangle－right.png");
-  background-size: 12px 12px;
+  background-image: url("../img/rhombus.png");
+  background-size: 10px 10px;
   background-repeat: no-repeat;
-  width: 12px;
-  height: 12px;
-  margin: 3px;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
 }
 
 nav ul ul {
-  margin-bottom: 10px
+  margin: 2px 0 10px 22px;
 }
 
 nav ul ul + ul {
@@ -310,11 +312,11 @@ footer {
 }
 
 .type-signature {
-  color: #ccc;
+  color: #3b3c40;
 }
 
 .type-signature:last-child {
-  color: #eee;
+  color: #3b3c40;
 }
 
 .name, .signature {
@@ -322,7 +324,7 @@ footer {
 }
 
 .signature {
-    color: #ffff99;
+    color: #777;
 }
 
 .details {
@@ -477,6 +479,11 @@ footer {
 
 .params td {
    border-top: 1px solid #eee
+}
+
+.params thead {
+  line-height: 18px;
+  font-size: 13px;
 }
 
 .params thead tr, .props thead tr {
@@ -708,6 +715,7 @@ span.param-type, .params td .param-type, .param-type dd {
 p {
   font-size: 13px;
   color: #3b3c40;
+  font-style: italic;
   font-family: "Microsoft Yahei","Helvetica Neue",sans-serif;
 }
 
@@ -719,6 +727,12 @@ h5 {
   font-size: 16px;
   color: #4D4E53;
   font-weight: bold;
+}
+
+h5 span {
+  color: #777;
+  font-weight: normal;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
 }
 
 .prettyprint code {

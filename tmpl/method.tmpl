@@ -7,7 +7,7 @@ var self = this;
     <h2>Constructor</h2>
     <?js } ?>
 
-    <h4 class="name" id="<?js= id ?>"><?js= data.attribs + (kind === 'class' ? 'new ' : '') +
+    <h4 class="name" id="<?js= id ?>"><?js= (kind === 'class' ? 'new ' : '') +
     name + (data.signature || '') ?></h4>
 
     <?js if (data.summary) { ?>
@@ -27,6 +27,19 @@ var self = this;
     <h5>Extends:</h5>
     <?js= self.partial('augments.tmpl', data) ?>
 <?js } ?>
+
+<?js 
+    var attr_access = "public";
+    if (data.attribs) {
+        if (data.attribs.indexOf('private') > -1) {
+            attr_access = "private";
+        } else if (data.attribs.indexOf('protected') > -1) {
+            attr_access = "protected";
+        }
+    }
+?>
+
+<h5>权限：<span><?js= attr_access ?></span></h5>
 
 <?js if (kind === 'event' && data.type && data.type.names) {?>
     <h5>类型：</h5>
@@ -48,13 +61,8 @@ var self = this;
 <?js } ?>
 
 <?js if (data.params && params.length) { ?>
-    <h5>Parameters:</h5>
-    <?js for (var ij=params.length-1; ij >= 0 ; ij--) { ?>
-        <?js if (params[ij].type && params[ij].type.names[0] == "json") { ?>
-            <?js params.splice(ij, 1); break; ?>
-        <?js } ?> 
-    <?js } ?>
-    <?js= this.partial('params.tmpl', [params, data.json]) ?>
+    <h5>参数：</h5>
+    <?js= this.partial('params.tmpl', params) ?>
 <?js } ?>
 
 <?js if (data.kind !== 'module' && data.requires && data.requires.length) { ?>
