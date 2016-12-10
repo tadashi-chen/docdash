@@ -302,7 +302,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                 itemsNav += '<li>' + linktoFn('', item.name);
                 itemsNav += '</li>';
             } else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
-                itemsNav += '<li>' + linktoFn(item.longname, item.name.replace(/^module:/, ''));
+                itemsNav += '<li><span></span>' + linktoFn(item.longname, item.name.replace(/^module:/, ''));
 
                 if (docdash.static && members.find(function (m) { return m.scope === 'static'; } )) {
                     itemsNav += "<ul class='members'>";
@@ -362,23 +362,22 @@ function linktoExternal(longName, name) {
  * @param {array<object>} members.tutorials
  * @param {array<object>} members.events
  * @param {array<object>} members.interfaces
- * @return {s
- ring} The HTML for the navigation sidebar.
+ * @return {string} The HTML for the navigation sidebar.
  */
 
 function buildNav(members) {
-    var nav = '<h2><a href="index.html">Home</a></h2>';
+    var nav = '<h2><a href="index.html">ChenJing</a></h2>';
     var seen = {};
     var seenTutorials = {};
 
-    nav += buildMemberNav(members.classes, 'Classes', seen, linkto);
-    nav += buildMemberNav(members.modules, 'Modules', {}, linkto);
-    nav += buildMemberNav(members.externals, 'Externals', seen, linktoExternal);
-    nav += buildMemberNav(members.events, 'Events', seen, linkto);
-    nav += buildMemberNav(members.namespaces, 'Namespaces', seen, linkto);
+    nav += buildMemberNav(members.classes, '类(Classes)', seen, linkto);
+    nav += buildMemberNav(members.modules, '模块(Modules)', {}, linkto);
+    nav += buildMemberNav(members.externals, '拓展(Externals)', seen, linktoExternal);
+    nav += buildMemberNav(members.events, '事件(Events)', seen, linkto);
+    nav += buildMemberNav(members.namespaces, '命名空间(Namespaces)', seen, linkto);
     nav += buildMemberNav(members.mixins, 'Mixins', seen, linkto);
-    nav += buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial);
-    nav += buildMemberNav(members.interfaces, 'Interfaces', seen, linkto);
+    nav += buildMemberNav(members.tutorials, '教程(Tutorials)', seenTutorials, linktoTutorial);
+    nav += buildMemberNav(members.interfaces, '接口(Interfaces)', seen, linkto);
 
     if (members.globals.length) {
         var globalNav = '';
@@ -395,7 +394,7 @@ function buildNav(members) {
             nav += '<h3>' + linkto('global', 'Global') + '</h3>';
         }
         else {
-            nav += '<h3>Global</h3><ul>' + globalNav + '</ul>';
+            nav += '<h3>全局(Global)</h3><ul>' + globalNav + '</ul>';
         }
     }
 

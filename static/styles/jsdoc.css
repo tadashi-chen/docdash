@@ -48,7 +48,7 @@ a:hover {
 }
 
 article a {
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
 }
 
 article a:hover, article a:active {
@@ -88,6 +88,7 @@ h2 {
 h3 {
   font-size: 24px;
   margin: 1.2em 0 .3em;
+  font-weight: bold;
 }
 
 h4 {
@@ -97,11 +98,11 @@ h4 {
 }
 
 h4.name {
-  color: #fff;
-  background: #999;
-  box-shadow: 0 .25em .5em #d3d3d3;
-  border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
+  color: #000;
+  background: #dde4e9;
+  /*box-shadow: 0 .25em .5em #d3d3d3;*/
+  /*border-top: 1px solid #d3d3d3;*/
+  /*border-bottom: 1px solid #d3d3d3;*/
   margin: 1.5em 0 0.5em;
   padding: .75em 0 .75em 10px;
 }
@@ -160,6 +161,11 @@ section {
   padding: 0 0 0 30px;
 }
 
+#main section header h2 {
+  font-family: 'Open Sans',Arial,sans-serif;
+  color: #4d4e53;
+}
+
 .variation {
   display: none
 }
@@ -175,23 +181,22 @@ nav {
   float: left;
   display: block;
   width: 250px;
-  background: #aaa;
   overflow: auto;
   position: fixed;
   height: 100%;
-  padding-left: 20px;
 }
 
 nav h3 {
   margin-top: 12px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 12px;
+  /*text-transform: uppercase;*/
+  /*letter-spacing: 1px;*/
   font-weight: 700;
   line-height: 24px;
   margin: 15px 0 10px;
   padding: 0;
-  color: #000;
+  color: #3b3c40;
+  margin-left: 20px;
 }
 
 nav ul {
@@ -201,6 +206,7 @@ nav ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  margin-left: 20px;
 }
 
 nav ul a,
@@ -222,7 +228,20 @@ nav > ul {
 }
 
 nav > ul > li > a {
-  color: #ffff99;
+  color: #3b3c40;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+
+nav > ul > li > span {
+  display: block;
+  float: left;
+  background-image: url("../img/triangle－right.png");
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  margin: 3px;
 }
 
 nav ul ul {
@@ -234,24 +253,29 @@ nav ul ul + ul {
 }
 
 nav ul ul a {
-  color: #fff;
-  border-left: 1px solid hsl(207, 10%, 86%);
+  color: #3b3c40;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  /*border-left: 1px solid hsl(207, 10%, 86%);*/
 }
 
 nav ul ul a,
 nav ul ul a:active {
-  padding-left: 20px
+  padding-left: 6px
 }
 
 nav h2 {
-   font-size: 12px;
-   margin: 0;
-   padding: 0;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 15px;
+  background: #f4f7f8;
+  height: 36px;
+  line-height: 36px;
+  color: #3b3c40;
 }
 
 nav > h2 > a {
    display: block;
-   margin: 10px 0 -10px;
+   /*margin: 10px 0 -10px;*/
    color: #777 !important;
 }
 
@@ -302,16 +326,24 @@ footer {
 }
 
 .details {
-  margin-top: 6px;
-  border-left: 2px solid #DDD;
+  margin: 6px 0 0 2px;
+  border-left: 1px solid #DDD;
   line-height: 20px;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-style: italic;
 }
 
 .details dt {
-   width: 120px;
-   float: left;
-   padding-left: 10px;
+  width: 114px;
+  float: left;
+  padding-left: 14px;
+  font-size: 13px;
+  font-style: normal;
+}
+
+.details dt {
+
 }
 
 .details dd {
@@ -338,7 +370,7 @@ footer {
 
 .description {
   margin-bottom: 1em;
-  margin-top: 1em;
+  /*margin-top: 1em;*/
 }
 
 .code-caption {
@@ -356,7 +388,7 @@ footer {
   width: inherit;
   line-height: 18px;
   display: block;
-  background-color: #0d152a;
+  /*background-color: #0d152a;*/
   color: #aeaeae;
 }
 
@@ -669,4 +701,35 @@ span.param-type, .params td .param-type, .param-type dd {
   display: inline-block;
   margin-left: -14px;
   margin-right: 5px;
+}
+
+/** Add by myself */
+
+p {
+  font-size: 13px;
+  color: #3b3c40;
+  font-family: "Microsoft Yahei","Helvetica Neue",sans-serif;
+}
+
+.dummy a:hover {
+  text-decoration: underline;
+}
+
+h5 {
+  font-size: 16px;
+  color: #4D4E53;
+  font-weight: bold;
+}
+
+.prettyprint code {
+  background: #f7f8f8;
+  color: #333;
+  border-radius: 3px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+#main .page-title {
+  font-family: 'Open Sans',Arial,sans-serif !important;
+  font-size: 38px !important;
+  font-weight: bold !important;
 }

@@ -1,78 +1,78 @@
 .pln {
-  color: #ddd;
+  color: #333;
 }
 
 /* string content */
 .str {
-  color: #61ce3c;
+  color: #333;
 }
 
 /* a keyword */
 .kwd {
-  color: #fbde2d;
+  color: #333;
 }
 
 /* a comment */
 .com {
-  color: #aeaeae;
+  color: #333;
 }
 
 /* a type name */
 .typ {
-  color: #8da6ce;
+  color: #333;
 }
 
 /* a literal value */
 .lit {
-  color: #fbde2d;
+  color: #333;
 }
 
 /* punctuation */
 .pun {
-  color: #ddd;
+  color: #333;
 }
 
 /* lisp open bracket */
 .opn {
-  color: #000000;
+  color: #333;
 }
 
 /* lisp close bracket */
 .clo {
-  color: #000000;
+  color: #333;
 }
 
-/* a markup tag name */
+ a markup tag name 
 .tag {
-  color: #8da6ce;
+  color: #333;
 }
 
 /* a markup attribute name */
 .atn {
-  color: #fbde2d;
+  color: #333;
 }
 
 /* a markup attribute value */
 .atv {
-  color: #ddd;
+  color: #333;
 }
 
 /* a declaration */
 .dec {
-  color: #EF5050;
+  color: #333;
 }
 
 /* a variable name */
 .var {
-  color: #c82829;
+  color: #333;
 }
 
 /* a function name */
 .fun {
-  color: #4271ae;
+  color: #333;
 }
 
-/* Specify class=linenums on a pre to get line numbering */
+/* specify class=linenums on a pre to get line numbering */
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;

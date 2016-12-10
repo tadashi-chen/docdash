@@ -29,7 +29,7 @@ var self = this;
 <?js } ?>
 
 <?js if (kind === 'event' && data.type && data.type.names) {?>
-    <h5>Type:</h5>
+    <h5>类型：</h5>
     <ul>
         <li>
             <?js= self.partial('type.tmpl', data.type.names) ?>
@@ -43,14 +43,14 @@ var self = this;
 <?js } ?>
 
 <?js if (data.examples && examples.length) { ?>
-    <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
+    <h5>例子：<?js= examples.length > 1? 's':'' ?></h5>
     <?js= this.partial('examples.tmpl', examples) ?>
 <?js } ?>
 
 <?js if (data.params && params.length) { ?>
     <h5>Parameters:</h5>
     <?js for (var ij=params.length-1; ij >= 0 ; ij--) { ?>
-        <?js if (params[ij].name == "jsonArg") { ?>
+        <?js if (params[ij].type && params[ij].type.names[0] == "json") { ?>
             <?js params.splice(ij, 1); break; ?>
         <?js } ?> 
     <?js } ?>
